@@ -11,7 +11,10 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *trayView;
 @property (nonatomic, assign) CGPoint trayOrigCenter;
+@property (nonatomic, assign) CGPoint trayCenterWhenClose;
 @end
+
+static const CGPoint TRAY_OPEN = {207, 543};
 
 @implementation ViewController
 - (IBAction)onTrayPanGesture:(UIPanGestureRecognizer *)sender {
@@ -28,12 +31,38 @@
         self.trayView.center = CGPointMake(self.trayOrigCenter.x, self.trayOrigCenter.y + translation.y);
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         NSLog(@"Gesture ended at: %@", NSStringFromCGPoint(location));
+
+        CGPoint velocity = [sender velocityInView:self.trayView];
+        CGFloat velocityY = velocity.y;
+        
+        if (velocityY > 0) {
+            [UIView animateWithDuration:0.3
+                             delay: 0.0
+                             options:(UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionAllowUserInteraction)
+                             animations:^{
+                                 [UIView setAnimationDelegate:self];
+                                 self.trayView.center = self.trayCenterWhenClose;
+                             }
+                             completion: ^(BOOL finished) {
+                                 
+                             }];
+        } else if (velocityY <= 0) {
+            [UIView animateWithDuration:0.3
+                             animations:^{
+                                 [UIView setAnimationDelegate:self];
+                                 self.trayView.center = TRAY_OPEN;
+                             }
+                             completion:^(BOOL finished) {
+                                 
+                             }];
+            
+        }
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.trayCenterWhenClose = [self.trayView center];
 }
 
 
