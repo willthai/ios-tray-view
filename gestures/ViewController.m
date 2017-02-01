@@ -11,7 +11,9 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIView *trayView;
 @property (nonatomic, assign) CGPoint trayOrigCenter;
+@property (nonatomic, assign) CGPoint faceOrigCenter;
 @property (nonatomic, assign) CGPoint trayCenterWhenClose;
+@property (nonatomic, strong) UIImageView *newlyCreatedFace;
 @end
 
 static const CGPoint TRAY_OPEN = {207, 543};
@@ -59,9 +61,40 @@ static const CGPoint TRAY_OPEN = {207, 543};
         }
     }
 }
+- (IBAction)onSmileyGesture:(UIPanGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        // Gesture recognizers know the view they are attached to
+        UIImageView *imageView = (UIImageView *)sender.view;
+        
+        // Create a new image view that has the same image as the one currently panning
+        self.newlyCreatedFace = [[UIImageView alloc] initWithImage:imageView.image];
+        
+        // Add the new face to the tray's parent view.
+        [self.view addSubview:self.newlyCreatedFace];
+        
+        // Initialize the position of the new face.
+        self.newlyCreatedFace.center = imageView.center;
+        self.newlyCreatedFace.frame = sender.view.frame; // make them the same size
+        self.newlyCreatedFace.contentMode = UIViewContentModeScaleAspectFit;
+        
+        // Since the original face is in the tray, but the new face is in the
+        // main view, you have to offset the coordinates
+        CGPoint faceCenter = self.newlyCreatedFace.center;
+        self.newlyCreatedFace.center = CGPointMake(faceCenter.x + self.trayView.frame.origin.x,
+                                                   faceCenter.y + self.trayView.frame.origin.y);
+        self.faceOrigCenter = self.newlyCreatedFace.center;
+        NSLog(@"new face center:%@", NSStringFromCGPoint(self.newlyCreatedFace.center));
+
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [sender translationInView:self.newlyCreatedFace];
+        
+        self.newlyCreatedFace.center = CGPointMake(self.faceOrigCenter.x + translation.x, self.faceOrigCenter.y + translation.y);
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.trayView.layer.cornerRadius = 3;
     self.trayCenterWhenClose = [self.trayView center];
 }
 
