@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" id="pQf-Ev-2cZ" userLabel="tray">
-                                <rect key="frame" x="20" y="684" width="374" height="291"/>
+                                <rect key="frame" x="20" y="685" width="374" height="291"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="happy.png" id="sOU-jK-AE4" userLabel="icon 1">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6460.jpg" id="sOU-jK-AE4" userLabel="icon 1">
                                         <rect key="frame" x="8" y="53" width="104" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -29,7 +29,7 @@
                                             <outletCollection property="gestureRecognizers" destination="PSV-Ya-f5N" appends="YES" id="x8x-VI-YkG"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="excited.png" id="8RW-Eo-2ky" userLabel="icon 2">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6193.jpg" id="8RW-Eo-2ky" userLabel="icon 2">
                                         <rect key="frame" x="135" y="53" width="104" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -37,7 +37,7 @@
                                             <outletCollection property="gestureRecognizers" destination="4Oc-8d-7Gb" appends="YES" id="r2o-st-kE6"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="dead.png" id="pFw-WW-sYk" userLabel="icon 3">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6295.jpg" id="pFw-WW-sYk" userLabel="icon 3">
                                         <rect key="frame" x="262" y="53" width="104" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -45,7 +45,7 @@
                                             <outletCollection property="gestureRecognizers" destination="hVq-bz-yZB" appends="YES" id="aLo-i9-ihd"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sad.png" id="lxD-I3-5td" userLabel="icon 4">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6382.jpg" id="lxD-I3-5td" userLabel="icon 4">
                                         <rect key="frame" x="7" y="172" width="104" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -53,7 +53,7 @@
                                             <outletCollection property="gestureRecognizers" destination="ajW-se-Jix" appends="YES" id="MYx-PK-9HR"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wink.png" id="ldH-Fk-G4o" userLabel="icon 6">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_7918.jpg" id="ldH-Fk-G4o" userLabel="icon 6">
                                         <rect key="frame" x="262" y="172" width="104" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -65,7 +65,7 @@
                                         <rect key="frame" x="147" y="8" width="80" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tongue.png" id="Vze-ge-IKH" userLabel="icon 5">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_6471.jpg" id="Vze-ge-IKH" userLabel="icon 5">
                                         <rect key="frame" x="135" y="172" width="104" height="104"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
@@ -128,13 +128,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dead.png" width="60" height="60"/>
+        <image name="IMG_6193.jpg" width="240" height="240"/>
+        <image name="IMG_6295.jpg" width="240" height="240"/>
+        <image name="IMG_6382.jpg" width="240" height="240"/>
+        <image name="IMG_6460.jpg" width="240" height="240"/>
+        <image name="IMG_6471.jpg" width="240" height="240"/>
+        <image name="IMG_7918.jpg" width="240" height="240"/>
         <image name="down_arrow.png" width="20" height="14"/>
-        <image name="excited.png" width="60" height="60"/>
-        <image name="happy.png" width="60" height="60"/>
-        <image name="sad.png" width="60" height="60"/>
-        <image name="tongue.png" width="60" height="60"/>
-        <image name="wink.png" width="60" height="60"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
