@@ -76,6 +76,11 @@ static const CGPoint TRAY_OPEN = {207, 543};
         self.newlyCreatedFace.center = imageView.center;
         self.newlyCreatedFace.frame = sender.view.frame; // make them the same size
         self.newlyCreatedFace.contentMode = UIViewContentModeScaleAspectFit;
+        self.newlyCreatedFace.userInteractionEnabled = YES;
+        
+        UIPinchGestureRecognizer * recognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
+        recognizer.delegate = self;
+        [self.newlyCreatedFace addGestureRecognizer:recognizer];
         
         // Since the original face is in the tray, but the new face is in the
         // main view, you have to offset the coordinates
@@ -90,6 +95,15 @@ static const CGPoint TRAY_OPEN = {207, 543};
         
         self.newlyCreatedFace.center = CGPointMake(self.faceOrigCenter.x + translation.x, self.faceOrigCenter.y + translation.y);
     }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
+- (void)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    recognizer.view.transform = CGAffineTransformScale(recognizer.view.transform, recognizer.scale, recognizer.scale);
+    recognizer.scale = 1;
 }
 
 - (void)viewDidLoad {
